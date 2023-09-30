@@ -1,1 +1,76 @@
+Part A.Fahrenheit and centigrade transversion
+public class ImmutableObject {
+    public static void main(String[] args) {
+        float fahrenheit;
+        float centigrade;
+
+        fahrenheit = 98.6f;
+
+        centigrade = (5.0f / 9.0f) * (fahrenheit - 32);
+
+        System.out.println("Fahrenheit: " + fahrenheit);
+        System.out.println("Centigrade: " + centigrade);
+
+        System.out.println("Centigrade values for Fahrenheit:");
+
+        for (float f = 0.0f; f <= 40.0f; f += 4.0f) {
+            centigrade = (5.0f / 9.0f) * (f - 32);
+            System.out.println(f + " Fahrenheit = " + centigrade + " Centigrade");
+        }
+
+        System.out.println("Centigrade values for Fahrenheit using a while loop:");
+
+        fahrenheit = 0.0f;
+
+        while (fahrenheit <= 40.0f) {
+            centigrade = (5.0f / 9.0f) * (fahrenheit - 32);
+            System.out.println(fahrenheit + " Fahrenheit = " + centigrade + " Centigrade");
+            fahrenheit += 4.0f; // Increment Fahrenheit by 4 for the next iteration
+        }
+    }
+}
+
+
+Part B. String Operation
+import java.util.Scanner;
+public class ImmutableObject {
+
+    public static void main(String[] args) {
+        String[][] myArray = {
+            {"BMW", "Ferrari", "Lambo"},
+            {"pizza", "burger", "dumpling"}
+        };
+     Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.print("Enter a word: ");
+            String inputWord = scanner.nextLine(); // Read user input
+
+            if (inputWord.equalsIgnoreCase("STOP")) {
+                System.out.println("Exiting the program.");
+                break;
+            }
+        boolean isFound = false;
+
+            for (String[] subArray : myArray) {
+                for (String word : subArray) {
+                    if (word.equalsIgnoreCase(inputWord)) {
+                        isFound = true;
+                        break;
+                    }
+                }
+                if (isFound) {
+                    break;
+                }
+            }
+            if (isFound) {
+                System.out.println(inputWord + " is in the 2D array.");
+            } else {
+                System.out.println(inputWord + " is not in the 2D array.");
+            }
+        }
+        scanner.close();
+    }
+}
+
 
