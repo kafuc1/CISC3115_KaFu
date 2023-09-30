@@ -1,52 +1,5 @@
-import java.util.Scanner;
-
-public class ImmutableObject {
-
-    public static void main(String[] args) {
-        // Create a 2D array with car and food names
+public static void main(String[] args) {
         String[][] myArray = {
             {"BMW", "Ferrari", "Lambo"},
             {"pizza", "burger", "dumpling"}
         };
-
-        // Create a Scanner object to read user input
-        Scanner scanner = new Scanner(System.in);
-
-        while (true) {
-            System.out.print("Enter a word: ");
-            String inputWord = scanner.nextLine(); // Read user input
-
-            // Check if the input word is "STOP" to exit the program
-            if (inputWord.equalsIgnoreCase("STOP")) {
-                System.out.println("Exiting the program.");
-                break;
-            }
-
-            boolean isFound = false;
-
-            // Loop through the 2D array to check if the input word is in it
-            for (String[] subArray : myArray) {
-                for (String word : subArray) {
-                    if (word.equalsIgnoreCase(inputWord)) {
-                        isFound = true;
-                        break;
-                    }
-                }
-                if (isFound) {
-                    break;
-                }
-            }
-
-            // Print the result based on whether the word is found or not
-            if (isFound) {
-                System.out.println(inputWord + " is in the 2D array.");
-            } else {
-                System.out.println(inputWord + " is not in the 2D array.");
-            }
-        }
-
-        // Close the scanner to release resources
-        scanner.close();
-    }
-}
-
